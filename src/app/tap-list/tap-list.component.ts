@@ -1,8 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Tap } from './../tap';
-import { TapService } from './../tap.service';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-tap-list',
@@ -10,11 +8,11 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls: ['./tap-list.component.css']
 })
 export class TapListComponent implements OnInit {
-  taps: FirebaseListObservable<any[]>;
+  @Input() taps: Tap[];
   selectedTap: Tap;
   @Output() clickSender = new EventEmitter();
 
-  constructor(private tapService: TapService) { }
+  constructor() { }
 
   onSelect(tap: Tap): void {
     this.clickSender.emit(tap);
@@ -23,7 +21,7 @@ export class TapListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.taps = this.tapService.getTaps();
+
   }
 
 }

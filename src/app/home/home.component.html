@@ -1,4 +1,4 @@
-<app-tap-list (clickSender)="onSelect($event)"></app-tap-list>
+<app-tap-list [taps]="taps"  (clickSender)="onSelect($event)"></app-tap-list>
 <div>
   <label>Tap Name:</label>
   <input #newName>
