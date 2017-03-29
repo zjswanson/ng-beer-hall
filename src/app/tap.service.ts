@@ -18,4 +18,8 @@ export class TapService {
     return this.taps;
   }
 
+  addTap(newTap: Tap): void {
+    this.taps.push(newTap);
+  }
+
 }

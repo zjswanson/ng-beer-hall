@@ -1,8 +1,3 @@
 export class Tap {
-  id: any;
-  name: string;
-  brand: string;
-  price: string;
-  alcoholContent: number;
-  pintsRemaining: number;
+  constructor (public name: string, public brand: string, public price: string, public alcoholContent: number, public pintsRemaining: number = 124) {}
 }

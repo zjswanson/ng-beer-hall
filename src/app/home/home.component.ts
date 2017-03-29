@@ -38,8 +38,9 @@ export class HomeComponent implements OnInit {
 
   }
 
-  addTap(): void {
-
+  submitForm(name: string, brand: string, price: string, alcoholContent: number) {
+    var newTap: Tap = new Tap(name, brand, price, alcoholContent);
+    this.tapService.addTap(newTap);
   }
 
 }
