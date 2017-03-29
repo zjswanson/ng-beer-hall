@@ -1,4 +1,4 @@
-<app-tap-list></app-tap-list>
+<app-tap-list (clickSender)="onSelect($event)"></app-tap-list>
 <div>
   <label>Tap Name:</label>
   <input #newName>
@@ -10,21 +10,5 @@
   <input #newAlcoholContent>
   <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAlcoholContent.value)">Add a New Tap</button>
 </div>
-<h2>Tap Detail:</h2>
-<div *ngIf="selectedTap">
-  <h2>
-    {{selectedTap.name}} | {{selectedTap.pintsRemaining}}
-  </h2>
-  <button (click)="showEdit()">Edit</button>
-  <div *ngIf="editOpen">
-    <label>Name:</label>
-    <input [(ngModel)]="selectedTap.name" placeholder={{selectedTap.name}}/>
-    <label>Brand:</label>
-    <input [(ngModel)]="selectedTap.brand" placeholder={{selectedTap.brand}}/>
-    <label>Price:</label>
-    <input [(ngModel)]="selectedTap.price" placeholder={{selectedTap.price}}/>
-    <label>Alcohol Content:</label>
-    <input [(ngModel)]="selectedTap.alcoholContent" placeholder={{selectedTap.alcoholContent}}/>
-    <button (click)="saveEdit()">Save Edit</button>
-  </div>
-</div>
+
+<app-tap-detail [selectedTap]="selectedTap"></app-tap-detail>
