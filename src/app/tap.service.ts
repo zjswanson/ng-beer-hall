@@ -21,4 +21,24 @@ export class TapService {
     this.taps.push(newTap);
   }
 
+  getTapById(tapId: string) {
+    return this.angularFire.database.object('/taps/' + tapId);
+  }
+
+  updateTap(tapToEdit) {
+    console.log(tapToEdit);
+    console.log(tapToEdit.$key);
+    console.log(tapToEdit.id);
+    var tapEntryInDatabase = this.getTapById(tapToEdit.$key);
+    console.log(tapEntryInDatabase);
+    tapEntryInDatabase.update({ name: tapToEdit.name,
+                                brand: tapToEdit.brand,
+                                price: tapToEdit.price,
+                                alcoholContent: tapToEdit.alcoholContent,
+                                pintsRemaining: tapToEdit.pintsRemaining
+                              });
+  }
+
+
+
 }

@@ -1,8 +1,9 @@
 <h2>Tap Detail:</h2>
 <div *ngIf="selectedTap">
   <h2>
-    {{selectedTap.name}} | {{selectedTap.pintsRemaining}}
+    {{selectedTap.brand}} {{selectedTap.name}} | {{selectedTap.pintsRemaining}} Pints Remaining
   </h2>
+  <h4>Tap Id: {{selectedTap.$key}}</h4>
   <button (click)="showEdit()">Edit</button>
   <div *ngIf="editOpen">
     <label>Name:</label>
@@ -13,6 +14,6 @@
     <input [(ngModel)]="selectedTap.price" placeholder={{selectedTap.price}}/>
     <label>Alcohol Content:</label>
     <input [(ngModel)]="selectedTap.alcoholContent" placeholder={{selectedTap.alcoholContent}}/>
-    <button (click)="saveEdit()">Save Edit</button>
+    <button (click)="saveEdit(selectedTap)">Save Edit</button>
   </div>
 </div>

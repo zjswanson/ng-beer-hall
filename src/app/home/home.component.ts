@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   taps: FirebaseListObservable<any[]>;
   selectedTap: Tap;
-  editOpen: boolean = false;
+
 
   constructor( private tapService: TapService ) { }
 
@@ -26,13 +26,6 @@ export class HomeComponent implements OnInit {
     this.selectedTap = tap;
   }
 
-  showEdit(): void {
-    this.editOpen = true;
-  }
-
-  saveEdit(): void {
-    this.editOpen = false;
-  }
 
   sellPint(): void {
 
@@ -40,6 +33,10 @@ export class HomeComponent implements OnInit {
 
   submitForm(newTap: Tap) {
     this.tapService.addTap(newTap);
+  }
+
+  updateTap(tap:Tap) {
+    this.tapService.updateTap(tap);
   }
 
 }
