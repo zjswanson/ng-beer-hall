@@ -1,0 +1,26 @@
+<h2>Menu</h2>
+<ul class="taps">
+  <li *ngFor="let tap of taps" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} <button (click)="sellPint()">Sell Pint</button>
+  </li>
+</ul>
+<div>
+  <button (click)="addTap()">Add a New Tap</button>
+</div>
+<h2>Tap Detail:</h2>
+<div *ngIf="selectedTap">
+  <h2>
+    {{selectedTap.name}} | {{selectedTap.pintsRemaining}}
+  </h2>
+  <button (click)="showEdit()">Edit</button>
+  <div *ngIf="editOpen">
+    <label>Name:</label>
+    <input [(ngModel)]="selectedTap.name" placeholder={{selectedTap.name}}/>
+    <label>Brand:</label>
+    <input [(ngModel)]="selectedTap.brand" placeholder={{selectedTap.brand}}/>
+    <label>Price:</label>
+    <input [(ngModel)]="selectedTap.price" placeholder={{selectedTap.price}}/>
+    <label>Alcohol Content:</label>
+    <input [(ngModel)]="selectedTap.alcoholContent" placeholder={{selectedTap.alcoholContent}}/>
+    <button (click)="saveEdit()">Save Edit</button>
+  </div>
+</div>
