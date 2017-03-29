@@ -1,3 +1,11 @@
-<p>
-  tap-add works!
-</p>
+<div>
+  <label>Tap Name:</label>
+  <input #newName>
+  <label>Tap Brand:</label>
+  <input #newBrand>
+  <label>Tap Price:</label>
+  <input #newPrice>
+  <label>Tap Alcohol Content:</label>
+  <input #newAlcoholContent>
+  <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAlcoholContent.value)">Add a New Tap</button>
+</div>
