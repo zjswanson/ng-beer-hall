@@ -27,8 +27,8 @@ export class HomeComponent implements OnInit {
   }
 
 
-  sellPint(): void {
-
+  sellPint(tap: Tap): void {
+    this.tapService.updateTap(tap);
   }
 
   submitForm(newTap: Tap) {
