@@ -8,6 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { TapService } from './tap.service';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import { TapListComponent } from './tap-list/tap-list.component';
+import { TapDetailComponent } from './tap-detail/tap-detail.component';
+import { TapTileComponent } from './tap-tile/tap-tile.component';
+import { TapAddComponent } from './tap-add/tap-add.component';
+import { TapEditComponent } from './tap-edit/tap-edit.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -19,7 +24,12 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TapListComponent,
+    TapDetailComponent,
+    TapTileComponent,
+    TapAddComponent,
+    TapEditComponent
   ],
   imports: [
     BrowserModule,
