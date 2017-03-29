@@ -19,6 +19,16 @@ export class TapListComponent implements OnInit {
     this.selectedTap = tap;
   }
 
+  priorityColor(remainingPints){
+    if (remainingPints <= 25){
+      return "bg-danger";
+    } else if (remainingPints <= 75) {
+      return  "bg-warning";
+    } else {
+      return "bg-info";
+    }
+  }
+
 
   ngOnInit() {
 

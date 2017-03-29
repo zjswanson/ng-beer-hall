@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 // imports hero class definition
 import { Tap } from './tap';
-import { TAPS } from './mock-taps';
 import { AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Injectable()
