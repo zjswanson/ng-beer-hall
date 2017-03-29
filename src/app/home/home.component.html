@@ -1,6 +1,6 @@
 <h2>Menu</h2>
 <ul class="taps">
-  <li *ngFor="let tap of taps" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} <button (click)="sellPint()">Sell Pint</button>
+  <li *ngFor="let tap of taps | async" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} <button (click)="sellPint()">Sell Pint</button>
   </li>
 </ul>
 <div>

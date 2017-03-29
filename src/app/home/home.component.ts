@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Tap } from './../tap';
 import { TapService } from './../tap.service';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-home',
@@ -10,18 +11,15 @@ import { TapService } from './../tap.service';
 })
 export class HomeComponent implements OnInit {
 
-  taps: Tap[];
+  taps: FirebaseListObservable<any[]>;
   selectedTap: Tap;
   editOpen: boolean = false;
 
   constructor( private tapService: TapService ) { }
 
-  getTaps(): void {
-    this.tapService.getTaps().then(taps => this.taps = taps);
-  }
 
   ngOnInit(): void {
-    this.getTaps();
+    this.taps = this.tapService.getTaps();
   }
 
   onSelect(tap: Tap): void {
