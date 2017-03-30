@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.taps = this.tapService.getTaps().subscribe(result => {this.taps = result});
+    // this.selectedTap.subscribe(result => {this.selectedTap = result})
   }
 
   onSelect(tap: Tap): void {
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
 
   sellPint(tap: Tap): void {
     this.tapService.updateTap(tap);
+    this.selectedTap = tap;
   }
 
   submitForm(newTap: Tap) {

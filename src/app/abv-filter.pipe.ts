@@ -13,8 +13,6 @@ export class AbvFilterPipe implements PipeTransform {
 
     var filter = function(high,low) {
       for (let i=0;i<value.length; i++) {
-        console.log(value[i].alcoholContent);
-        console.log(typeof value[i].alcoholContent);
         if ( value[i].alcoholContent >= low && value[i].alcoholContent < high ) {
           output.push(value[i]);
         }

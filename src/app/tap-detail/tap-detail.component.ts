@@ -19,6 +19,7 @@ export class TapDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   showEdit(): void {
