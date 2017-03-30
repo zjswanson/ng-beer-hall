@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
 import { Tap } from './../tap';
 
 @Component({
@@ -12,8 +11,15 @@ export class TapListComponent implements OnInit {
   selectedTap: Tap;
   @Output() clickSender = new EventEmitter();
   @Output() pintClickSender = new EventEmitter();
+  filterHigh: string = 'high';
+  filterMedium: string = 'medium';
+  filterLow: string = 'low';
 
   constructor() { }
+
+  ngOnInit() {
+
+  }
 
   onSelect(tap: Tap): void {
     this.clickSender.emit(tap);
@@ -36,8 +42,5 @@ export class TapListComponent implements OnInit {
   }
 
 
-  ngOnInit() {
-
-  }
 
 }

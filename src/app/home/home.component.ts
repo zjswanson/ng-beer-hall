@@ -11,7 +11,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class HomeComponent implements OnInit {
 
-  taps: FirebaseListObservable<any[]>;
+  taps;
   selectedTap: Tap;
 
 
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.taps = this.tapService.getTaps();
+    this.taps = this.tapService.getTaps().subscribe(result => {this.taps = result});
   }
 
   onSelect(tap: Tap): void {

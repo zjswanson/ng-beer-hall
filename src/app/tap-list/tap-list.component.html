@@ -1,6 +1,19 @@
 <h2>Menu</h2>
 
+<h2>The Strong Stuff:</h2>
 <ul class="taps">
-  <li [class]="priorityColor(tap.pintsRemaining)"*ngFor="let tap of taps | async" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} | {{tap.pintsRemaining}} <button (click)="sellPint(tap)">Sell Pint</button>
+  <li [class]="priorityColor(tap.pintsRemaining)"*ngFor="let tap of taps | abvFilter:filterHigh" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} | {{tap.pintsRemaining}} <button (click)="sellPint(tap)">Sell Pint</button>
+  </li>
+</ul>
+
+<h2>Mediums!  Lot's of Em!:</h2>
+<ul class="taps">
+  <li [class]="priorityColor(tap.pintsRemaining)"*ngFor="let tap of taps | abvFilter:filterMedium" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} | {{tap.pintsRemaining}} <button (click)="sellPint(tap)">Sell Pint</button>
+  </li>
+</ul>
+
+<h2>Session Beers.  Drink a bunch:</h2>
+<ul class="taps">
+  <li [class]="priorityColor(tap.pintsRemaining)"*ngFor="let tap of taps | abvFilter:filterLow" (click)="onSelect(tap)"> {{tap.name}} | {{tap.brand}} | {{tap.price}} | {{tap.alcoholContent}} | {{tap.pintsRemaining}} <button (click)="sellPint(tap)">Sell Pint</button>
   </li>
 </ul>

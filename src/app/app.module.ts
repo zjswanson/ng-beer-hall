@@ -19,6 +19,7 @@ import { EmailComponent } from './email/email.component';
 import { MembersComponent } from './members/members.component';
 import { AuthGuard } from './auth.service';
 import { routes } from './app.routes';
+import { AbvFilterPipe } from './abv-filter.pipe';
 
 
 
@@ -42,7 +43,8 @@ export const firebaseConfig = {
     LoginComponent,
     SignupComponent,
     EmailComponent,
-    MembersComponent
+    MembersComponent,
+    AbvFilterPipe
   ],
   imports: [
     BrowserModule,
